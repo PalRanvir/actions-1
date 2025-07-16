@@ -1,0 +1,17 @@
+# In the file explorer, create a new folder: .github/workflows/. You need to create the workspace.yml file within . a.github/workflows directory.
+name: My First Workflow                              # Give a unique name to the workflow, this name is used to dispaly the name of this workflow under the Actions tab.
+
+on: push                                             # using the 'on' syntax, mention a trigger. You can also give mutlipe events using an array.concurrency.concurrency: 
+
+jobs:                                                # define job[s]
+    first_job:                                       # for each job give a unique name, here first_job is the name of a job.
+        runs-on: ubuntu-latest                       # you need to define where the job runs, we are running this job on ubuntu-latest runner    
+        steps:                                       # define the steps.
+        - name: Welcome message
+          run: echo "My first Github Actions Job"
+
+        - name: List files                           # you can give multiple steps, each step will have name & run/action/
+          run: ls
+
+        - name: Read file
+          run: cat README.md
