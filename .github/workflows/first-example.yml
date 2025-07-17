@@ -7,6 +7,9 @@ jobs:                                                # define job[s]
     first_job:                                       # for each job give a unique name, here first_job is the name of a job.
         runs-on: ubuntu-latest                       # you need to define where the job runs, we are running this job on ubuntu-latest runner    
         steps:                                       # define the steps.
+        - name: Checkout Repo
+          uses: actions/checkout@v4
+          
         - name: Welcome message
           run: echo "My first Github Actions Job"
 
